@@ -70,9 +70,6 @@ RUN tar zxf soccerwindow2-5.1.1.tar.gz
 WORKDIR /root/src/soccerwindow2-5.1.1
 RUN ./configure && make && make install
 
-COPY docker-entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 RUN useradd -d /home/rcsoccersim -m -s /bin/bash rcsoccersim \
   && echo "rcsoccersim:rcsoccersim" | chpasswd
 USER rcsoccersim
